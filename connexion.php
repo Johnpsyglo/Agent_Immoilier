@@ -4,10 +4,7 @@ include("Maconnexion.php");
 
 // On récolte les données
 $nom = $_POST['nom'];
-// $nom = $_POST['mail'];
 $mdp = $_POST['mdp'];
-// $mdp = $_POST['prix'];
-
 
 // Le pattern contient les caractère interdit lors de l'input
 $pattern = '/^[a-zA-Z0-9_]+$/';
@@ -17,8 +14,10 @@ $pattern = '/^[a-zA-Z0-9_]+$/';
 if(preg_match($pattern, $nom)){
 
     // On select l'auteur par rapport à son $nom et $mdp dans la table
-    $connexion = new MaConnexion("agence_immobilière","","root","localhost");
-    $requete = $connexion-> select("auteurs", "*");
+    
+    $requete = $test-> select("auteurs", "*");
+
+    var_dump($requete);
     foreach($requete as $compare){
         // Si le $mdp est égale au mot de passe de la bdd alors on créer la session
         if(password_verify($mdp, $compare['mdp'])){ 
@@ -40,7 +39,7 @@ if(preg_match($pattern, $nom)){
             // On enregistre l'id de l'auteur dans $_SESSION['id'] 
             $_SESSION['id'] = $compare['id_auteurs'];
             // On enregistre role de l'auteur dans $_SESSION['role'] 
-            $_SESSION['role'] = $compare['id_potentiel_acheteur'];
+            $_SESSION['role'] = $compare['id_roles'];
             // On enregistre nom de l'auteur dans $_SESSION['nom'] 
             $_SESSION['nom'] = $compare['nom'];
             // On créer une session article 
@@ -49,5 +48,10 @@ if(preg_match($pattern, $nom)){
             header("Location: immobilier.php");
             exit();
         }
+        
+
     }
+
+
+    
 }

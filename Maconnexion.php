@@ -286,7 +286,8 @@
 
 
 
-}//  $test = new MaConnexion("blog_jeux","","root","localhost");
+   }
+     $test = new MaConnexion("agence_immobiliere","","root","localhost");
  
 
 ?>

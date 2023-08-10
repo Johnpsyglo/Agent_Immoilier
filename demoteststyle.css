@@ -83,3 +83,18 @@ $carousel-transition:                transform $carousel-transition-duration eas
     cursor: pointer;
     z-index: 1;
 } */
+
+
+
+
+/* nav {
+    display: flex; /* Affiche les éléments de la barre de navigation en tant que flexbox pour les aligner horizontalement */
+    /* align-items: stretch; /* Centre les éléments verticalement dans la barre de navigation */
+    /* justify-content: space-between; Répartit l'espace entre les éléments de la barre de navigation
+    padding: 1px 20px; Espacement interne de 10px en haut/bas et 20px à gauche/droite */
+    /* background: url('site_exemples/img/navpackman-fotor.jpg'); Définit une image de fond pour la barre de navigation */
+    /* border: 1px solid gold; Bordure blanche de 3px autour de la barre de navigation */
+    /* background-color: rgba(var(--bs-tertiary-bg-rgb),var(--bs-bg-opacity))!important;
+    flex-direction: column-reverse;
+    background-image: url("img\logo\savoir-faire-agent-immobilier_5.jpg"); */
+/* }  */

@@ -13,13 +13,14 @@ session_start([
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agence Immobilière</title>
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="demoteststyle.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="./demoteststyle.css">
-     
+
+
 </head>
 
 <body class="acceuil">
@@ -35,26 +36,28 @@ session_start([
     </style>
 
 
-        <h1>Agence Immobilière PSY</h1>
-    
-    <div class="carousel" data-carousel="1" data-speed="3000">
-        <div class="w3-content w3-section" style="max-width:90%">
-            <img class="mySlides" src="./img/img 300 000€/5e2033e51b01e.jpg" style="width:auto 0 auto 0">
-            <img class="mySlides" src="./img/img 300 000€/380dd8caba7b874e3b9bc1fafb719aab.jpg" style="width:auto 0 ">
-            <img class="mySlides" src="./img/img 300 000€/achat-villa-de-luxe-et-de-prestige-le-coeur-de-l-europe-lcde-dubai-emirates-arabes-unis.jpg" style="width:auto 0 auto 0">
-        </div>
-        <!-- ajouter la dernière photo supplémentaire en premier et la première photo supplémentaire en dernier pour que l'effet de survol fonctionne correctement -->
+    <h1>Agence Immobilière PSY</h1>
 
-        <span class="carousel-control-left"></span>
-        <span class="carousel-control-right"></span>
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="./img/img 300 000€/5e2033e51b01e.jpg" class="d-block w-100" style="width:auto 0 auto 0" alt="car">
+            </div>
+            <div class="carousel-item">
+                <img src="./img/img 300 000€/380dd8caba7b874e3b9bc1fafb719aab.jpg" class="d-block w-100" style="width:auto 0 " alt="car">
+            </div>
+            <div class="carousel-item">
+                <img src="./img/img 300 000€/achat-villa-de-luxe-et-de-prestige-le-coeur-de-l-europe-lcde-dubai-emirates-arabes-unis.jpg" class="d-block w-100" style="width:auto 0 auto 0" alt="...">
+            </div>
+        </div>
     </div>
 
-   <hr class="light">
+    <hr class="light">
 
     <section class="bien">
         <h2>Bien à vendre</h2>
 
-       
+
 
         <hr class="light">
         <h3>Maison spacieuse</h3><br>
