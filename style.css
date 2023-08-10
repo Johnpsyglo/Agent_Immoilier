@@ -14,26 +14,29 @@ body {
 }
 
 header {
-    background-color: #333;
+    background-color: #2b416b6b;
     color: #fff;
     padding: 1rem;
     text-align: center;
+    width: 100%;
 }
-
-nav ul {
-    list-style: none;
+/* Styles pour la balise <nav> (barre de navigation) */
+nav {
+    display: flex; /* Affiche les éléments de la barre de navigation en tant que flexbox pour les aligner horizontalement */
+    align-items: center; /* Centre les éléments verticalement dans la barre de navigation */
+    justify-content: space-between; /* Répartit l'espace entre les éléments de la barre de navigation */
+    padding: 10px 20px; /* Espacement interne de 10px en haut/bas et 20px à gauche/droite */
+    /* background: url('site_exemples/img/navpackman-fotor.jpg'); Définit une image de fond pour la barre de navigation */
+    border: 3px solid white; /* Bordure blanche de 3px autour de la barre de navigation */
+    background-color: rgba(var(--bs-tertiary-bg-rgb),var(--bs-bg-opacity))!important;
 }
-
-nav ul li {
-    display: inline;
-    margin-right: 20px;
+.photo{
+    margin-left: 7%;
+    border-radius: 50%;
+    width: 130px;
+    height: 130px;
+    overflow: hidden;
 }
-
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-}
-
 .bien {
     padding: 2rem;
     display: flex;
@@ -91,6 +94,15 @@ img {
     .carousel-content {
         margin: 70px 0 30px;
     }
+}
+/* @media (min-width: 992px) */
+.navbar-expand-lg .navbar-collapse {
+    display: flex!important;
+    flex-basis: auto;
+    flex-wrap: nowrap;
+    background-color: lightsteelblue;
+    align-items: center;
+    flex-direction: row;
 }
 
 .carousel-content img {

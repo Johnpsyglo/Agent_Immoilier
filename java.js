@@ -1,3 +1,84 @@
+// le carousel pour la page index
+const slides = document.querySelectorAll('.slide');
+
+let currentSlide = 0;
+// mi conné pas
+function showSlide() {
+    slides.forEach((slide, index) => {
+        if (index === currentSlide) {
+            slide.classList.add('active');
+        } else {
+            slide.classList.remove('active');
+        }
+    });
+
+    currentSlide = (currentSlide + 1) % slides.length;
+}
+
+setInterval(showSlide, 4000);
+
+
+
+
+///fonction verification//////
+//getElementById() de Document renvoie un objet Element représentant l'élément dont la propriété id correspond à la chaîne de caractères spécifiée.
+document.getElementById("email").addEventListener ('input',function(){
+    var email = document.getElementById("email").value;
+    var text = document.getElementById("text");
+    var pattern = '/^[a-zA-Z0-9_]+$/'; // C'est dans la description, et permet de determiné quelle type de pattern n'est pas pris en compte ou autoriser
+
+    if (email.match(pattern)) {
+        text.innerHTML ="Votre addresse Mail est valide";
+        text.style.color ="green"
+    }else {
+        text.innerHTML ="Votre addresse Mail est invalide";
+        text.style.color ="red"
+    }
+    if (email == "") {
+        text.innerHTML ="";
+        text.style.color ="red"
+    }
+
+ })
+
+
+
+
+
+// code de js pour la page articles 
+
+// Sélection des éléments nécessaires
+const commentForm = document.querySelector('.comment-form');
+const commentsContainer = document.querySelector('.comments');
+const likeIcons = document.querySelectorAll('.icon');
+
+// Ajouter un événement "submit" au formulaire de commentaire
+commentForm.addEventListener('submit', function (event) {
+    event.preventDefault();
+
+    // Récupérer les valeurs des champs du formulaire
+    const nameInput = commentForm.querySelector('input[type="text"]');
+    const commentTextarea = commentForm.querySelector('textarea');
+
+    // Créer un nouvel élément "div" pour afficher le commentaire
+    const commentDiv = document.createElement('div');
+    commentDiv.innerHTML = `<strong>${nameInput.value}</strong>: ${commentTextarea.value}`;
+    commentsContainer.appendChild(commentDiv);
+
+    // Réinitialiser le formulaire après avoir soumis le commentaire
+    commentForm.reset();
+});
+
+// Ajouter un événement "click" pour les icônes d'appréciation
+likeIcons.forEach(icon => {
+    icon.addEventListener('click', function () {
+        // Ajouter la classe "active" à l'icône cliquée pour la mise en évidence
+        this.classList.toggle('active');
+    });
+});
+
+
+
 
 
 var myIndex = 0;
@@ -15,82 +96,3 @@ function carousel() {
   setTimeout(carousel, 2000); // Change image every 2 seconds
 }
 
-
-
-// if (document.querySelectorAll(".carousel").length > 0) {
-//     let carousels = document.querySelectorAll(".carousel");
-//     carousels.forEach(carousel => newCarousel(carousel));
-  
-//     function newCarousel(carousel) {
-//       let carouselChildren = document.querySelector(
-//         `.carousel[data-carousel="${carousel.dataset.carousel}"]`
-//       ).children;
-//       let speed = carousel.dataset.speed;
-//       let carouselContent = document.querySelectorAll(`.carousel-content`)[
-//         carousel.dataset.carousel - 1
-//       ];
-//       const carouselLength = carouselContent.children.length;
-//       let width = window.innerWidth;
-//       let count = width;
-//       let counterIncrement = width;
-//       let int = setInterval(timer, speed);
-  
-//       // initial transform
-//       carouselContent.style.transform = `translateX(-${width}px)`;
-  
-//       function timer() {
-//         if (count >= (counterIncrement - 2) * (carouselLength - 2)) {
-//           count = 0;
-//           carouselContent.style.transform = `translateX(-${count}px)`;
-//         }
-//         count = count + counterIncrement;
-//         carouselContent.style.transform = `translateX(-${count}px)`;
-//       }
-  
-//       function carouselClick() {
-//         // left click
-//         carouselChildren[0].addEventListener("click", function() {
-//           count = count - width;
-//           carouselContent.style.transform = `translateX(-${count - 100}px)`;
-//           if (count < counterIncrement) {
-//             count = counterIncrement * (carouselLength - 2);
-//             carouselContent.style.transform = `translateX(-${count - 100}px)`;
-//           }
-//         });
-//         // right click
-//         carouselChildren[1].addEventListener("click", function() {
-//           count = count + width;
-//           carouselContent.style.transform = `translateX(-${count + 100}px)`;
-//           if (count >= counterIncrement * (carouselLength - 1)) {
-//             count = counterIncrement;
-//             carouselContent.style.transform = `translateX(-${count + 100}px)`;
-//           }
-//         });
-//       }
-  
-//       function carouselHoverEffect() {
-//         // left hover effect events
-//         carouselChildren[0].addEventListener("mouseenter", function() {
-//           carouselContent.style.transform = `translateX(-${count - 100}px)`;
-//           clearInterval(int);
-//         });
-//         carouselChildren[0].addEventListener("mouseleave", function() {
-//           carouselContent.style.transform = `translateX(-${count}px)`;
-//           int = setInterval(timer, speed);
-//         });
-  
-//         // right hover effect events
-//         carouselChildren[1].addEventListener("mouseenter", function() {
-//           carouselContent.style.transform = `translateX(-${count + 100}px)`;
-//           clearInterval(int);
-//         });
-//         carouselChildren[1].addEventListener("mouseleave", function() {
-//           carouselContent.style.transform = `translateX(-${count}px)`;
-//           int = setInterval(timer, speed);
-//         });
-//       }
-  
-//       carouselHoverEffect();
-//       carouselClick();
-//     }
-//   }
