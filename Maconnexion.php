@@ -87,11 +87,36 @@
             echo "Erreur : ".$e->getMessage();
         }    
     }
+     public function select_articles($table, $column){
+        try {
+            // On reparamètre notre requete SQL selon nos besoin
+            // Ici on avait besoin de selectionné 3 articles récentes donc on rajoute ORDERBY BY 'nom_column' DESC pour mettre notre liste en ordre décroissant
+            // Et ensuite LIMIT 3 pour limiter le nombre d'article selectionné à 3
+            $requete = "SELECT $column from $table WHERE categorie = 1 ORDER BY id_maison DESC LIMIT 2 ";
+            $resultat = $this->connexionPDO->query($requete);
+            $resultat = $resultat->fetchAll(PDO::FETCH_ASSOC); //Recupere le resultat de la requete dans un tableau associatif
+            return $resultat;
+        
+        } catch (PDOException $e) {
+            echo "Erreur : ".$e->getMessage();
+        }    
+    }
 
 
     public function select_where_maison_spacieux($table, $column, $id) {
         try {
             $requete = "SELECT $column FROM $table WHERE id_maison = $id";
+            $resultat = $this->connexionPDO->query($requete);
+            $resultat = $resultat->fetchAll(PDO::FETCH_ASSOC); // Fetch the result of the query into an associative array
+
+            return $resultat;
+        } catch (PDOException $e) {
+            echo "Erreur : " . $e->getMessage();
+        }
+    }
+    public function select_where_articles($table, $column, $id) {
+        try {
+            $requete = "SELECT $column FROM $table WHERE id_articles = $id";
             $resultat = $this->connexionPDO->query($requete);
             $resultat = $resultat->fetchAll(PDO::FETCH_ASSOC); // Fetch the result of the query into an associative array
 
@@ -177,6 +202,24 @@
         }    
     }
 
+    public function insertionArticle( $image, $titre, $contenu, $categorie, $id_auteurs)
+    {
+        try {
+            $requete = "INSERT INTO `articles`( image, titre, contenu, categorie, id_auteurs) VALUES (?, ?, ?, ?, ?)";
+            $requete_preparee = $this->connexionPDO->prepare($requete);
+
+            $requete_preparee->bindValue(1, $image);
+            $requete_preparee->bindValue(2, $titre);
+            $requete_preparee->bindValue(3, $contenu);
+            $requete_preparee->bindValue(4, $categorie);
+            $requete_preparee->bindValue(5, $id_auteurs);
+
+            $requete_preparee->execute();
+            return "insertion reussie";
+        } catch (PDOException $e) {
+            return $e->getMessage();
+        }
+    }
     public function insertionArticle_Secure( $image, $titre, $contenu, $categorie, $id_auteurs)
     {
         try {

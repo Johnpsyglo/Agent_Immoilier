@@ -41,13 +41,13 @@ session_start([
     <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="./img/img 300 000€/5e2033e51b01e.jpg" class="d-block w-100" style="width:auto 0 auto 0" alt="car">
+                <img src="./img/img 300 000€/5e2033e51b01e.jpg" class="d-block w-100" class="img-responsive" style="width:auto 0 auto 0" style=padding:2rem; alt="car">
             </div>
             <div class="carousel-item">
-                <img src="./img/img 300 000€/380dd8caba7b874e3b9bc1fafb719aab.jpg" class="d-block w-100" style="width:auto 0 " alt="car">
+                <img src="./img/img 300 000€/380dd8caba7b874e3b9bc1fafb719aab.jpg" class="d-block w-100" class="img-responsive" style="width:auto 0 " style=padding:2rem; alt="car">
             </div>
             <div class="carousel-item">
-                <img src="./img/img 300 000€/achat-villa-de-luxe-et-de-prestige-le-coeur-de-l-europe-lcde-dubai-emirates-arabes-unis.jpg" class="d-block w-100" style="width:auto 0 auto 0" alt="...">
+                <img src="./img/img 300 000€/achat-villa-de-luxe-et-de-prestige-le-coeur-de-l-europe-lcde-dubai-emirates-arabes-unis.jpg" class="d-block w-100" class="img-responsive" style="width:auto 0 auto 0" style=padding:2rem; alt="car">
             </div>
         </div>
     </div>
@@ -67,11 +67,26 @@ session_start([
 
     <section class="bien1">
 
-        <div class="carousel" data-carousel="2">
-            <img src="./img/maison moderne 200 000€.jpg" alt="Appartement à vendre">
-            <img src="./img/maison-moderne-250-000-euros_7.jpg" alt="Appartement à vendre">
-            <img src="./img/0-modele-de-maison-pertuis-115m-maisons-bati-france.jpg" alt="Appartement à vendre">
-            <h3>Appartement moderne</h3>
+        <div class="col-md-4 col-sm-6 portfolio-item">
+            <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
+                <img src="img\img200 000€\0-modele-de-maison-pertuis-115m-maisons-bati-france.jpg" class="img-responsive" width:auto 0 auto 0" style=padding:2rem; alt="">
+            </a>
+        </div>
+
+        <div class="col-md-4 col-sm-6 portfolio-item">
+            <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
+                <img src="img\img200 000€\maison moderne 200 000€.jpg"" class="img-responsive" width:auto 0 auto 0" style=padding:2rem; alt="">
+            </a>
+        </div>
+
+        <div class="col-md-4 col-sm-6 portfolio-item">
+            <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
+                <img src="img\img200 000€\maison-moderne-250-000-euros_7 (1).jpg"" class="img-responsive" width:auto 0 auto 0" style=padding:2rem; alt="">
+            </a>
+        </div>
+
+
+        <div>
             <p>Prix : 200 000 €</p>
         </div>
     </section>

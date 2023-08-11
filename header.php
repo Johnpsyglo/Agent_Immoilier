@@ -4,6 +4,7 @@
         <div class="photo">
             <a href="immobilie.php"><img src="img\logo\logo-abri-nature-immo.png" width="100%" height="100%" alt="Logo"></a>
         </div>
+
         <div class="nav-right">
             <!-- Si il y a une session active on prend le nom dans la session pour afficher le message du h1 -->
             <?php
@@ -15,19 +16,19 @@
             ?>
 
             <button type="button" class="custom-btn-up updatebut" data-bs-toggle="modal" data-bs-target="#connexion" <?php
-                                                                                                                        // Si il y a une session lancé alors on affiche hidden qui cachera le button CONNEXION
-                                                                                                                        if (isset($_SESSION['role'])) {
-                                                                                                                            echo 'hidden';
-                                                                                                                        }
-                                                                                                                        ?>><span>CONNEXION</span>
+                // Si il y a une session lancé alors on affiche hidden qui cachera le button CONNEXION
+                if (isset($_SESSION['role'])) {
+                    echo 'hidden';
+                }
+                ?>><span>CONNEXION</span>
             </button>
 
             <button type="button" class="custom-btn-del deletebut" data-bs-toggle="modal" data-bs-target="#inscription" <?php
-                                                                                                                        // Si il y a une session lancé alors on affiche hidden qui cachera le button INSCRIPTION
-                                                                                                                        if (isset($_SESSION['role'])) {
-                                                                                                                            echo 'hidden';
-                                                                                                                        }
-                                                                                                                        ?>><span>INSCRIPTION</span></button>
+               // Si il y a une session lancé alors on affiche hidden qui cachera le button INSCRIPTION
+               if (isset($_SESSION['role'])) {
+                   echo 'hidden';
+               }
+               ?>><span>INSCRIPTION</span></button>
             <?php
             // Si il y a une session lancé alors on affiche le button DECONNEXION
             if (isset($_SESSION['role'])) {
@@ -68,9 +69,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="blog.php">Liste des biens</a>
                         </li>
-                        <li class="nav-item">
+                        <!-- <li class="nav-item">
                             <a class="nav-link disabled" aria-disabled="true">contact</a>
-                        </li>
+                        </li> -->
                     </ul>
                     <form class="d-flex" role="search">
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">

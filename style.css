@@ -10,17 +10,27 @@
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
-    
+    margin: 0;
+    padding: 0;
 }
 
-header {
+/* header { */
     /* background-color: #2b416b6b; */
-    color: #fff;
+    /* color: #fff;
     padding: 1rem;
     text-align: center;
     width: 100%;
-    background-image: url('img\logo\savoir-faire-agent-immobilier_5.jpg');
+    background: url('img\logo\savoir-faire-agent-immobilier_5.jpg');
+    
+} */
+header {
+    padding-top: 5px;
+    padding-right: 5px;
+    padding-left: 5px;
+    padding-bottom: 5px;
 }
+
+
 /* Styles pour la balise <nav> (barre de navigation) */
 
 nav {
@@ -29,9 +39,17 @@ nav {
     align-items: center; /* Centre les éléments verticalement dans la barre de navigation */
     justify-content: space-between; /* Répartit l'espace entre les éléments de la barre de navigation */
     padding: 5px 20px; /* Espacement interne de 10px en haut/bas et 20px à gauche/droite */
-    background: url('site_exemples/img/navpackman-fotor.jpg'); /* Définit une image de fond pour la barre de navigation */
+    /* background: url('site_exemples/img/navpackman-fotor.jpg'); Définit une image de fond pour la barre de navigation */
+    background: url('img\logo\savoir-faire-agent-immobilier_5.jpg'); /* Définit une image de fond pour la barre de navigation */
     border: 1px solid gold; /* Bordure blanche de 3px autour de la barre de navigation */
-   
+    
+    background-image: linear-gradient(to right, #2b416b6b, rgba(79, 224, 22, 0.795));
+    
+}
+.d-flex {
+    display: flex!important;
+    flex-direction: row;
+    flex-wrap: nowrap;
 }
 .photo{
     margin-left: 7%;
@@ -45,6 +63,16 @@ nav {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    display: flex;
+    
+}
+.bien1 {
+    padding: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+
 }
 
 .bien-item {
@@ -74,12 +102,23 @@ img {
     scroll-snap-align: start;
 }
 
+
 /* Premier Carousel */
-.carousel {
+/* .carousel {
     position: relative;
     overflow: hidden;
     z-index: 10001;
+} */
+
+.carousel {
+    position: relative;
+    margin-left: 7%;
+    border-radius: 2%;
+    overflow: hidden;
+    /* width: 130px; */
+    /* height: 130px; */
 }
+
 
 .carousel-content {
     display: flex;
@@ -103,7 +142,7 @@ img {
     display: flex!important;
     flex-basis: auto;
     flex-wrap: nowrap;
-    background-color: lightsteelblue;
+    /* background-color: lightsteelblue; */
     align-items: center;
     flex-direction: row;
 }
@@ -141,3 +180,10 @@ img {
     cursor: pointer;
     z-index: 1;
 }
+
+.h1, h1 {
+    font-size: calc(1.375rem + 1.5vw);
+    display: flex;
+    justify-content: space-around;
+}
+
